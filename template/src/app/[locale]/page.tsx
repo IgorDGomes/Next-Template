@@ -1,27 +1,30 @@
-import Link from "next/link";
+import { redirect } from "next/navigation";
 
-import initTranslations from "../i18n";
+import { getServerSession } from "next-auth";
 
-import { Props } from "@/types/props";
-import { LanguageSwitch } from "@/components/language-switch";
+import GithubLoginButton from "@/components/github_login_button";
+import GoogleLoginButton from "@/components/google_login_button";
 
 /**
- * Home page.
+ * Login page.
  * 
- * @param {Props} param0 
+ * @param param0 
  * @returns {JSX.Element}
  */
-export default async function Home({ params: { locale } }: Props) {
-  // Load translations for the current locale.
-  const { t } = await initTranslations(locale, ['home', 'common'])
+export default async function Login() {
+  const session = await getServerSession()
+
+  // If the user is already logged in, doens't allow going back to the login page.
+  if (session?.user?.email) {
+    redirect("/main")
+  }
 
   return (
-      <div className="h-screen flex flex-col gap-5 justify-center items-center">
-        <h1 className="text-xl font-semibold tracking-wide">{t("header")}</h1>
-        <p className="underline underline-offset-2 py-2 text-white/70">{t("common:example")}</p>
-        {/* Instead of using a provider, pass the t function directly through props. */}
-        <LanguageSwitch text={t("common:example")} locale={locale} />
-        <Link href={`/${locale}/second-page`} className="bg-zinc-800 py-2 px-4 rounded-md hover:bg-zinc-900 transition-all">{t("button")}</Link>
+      <div className="h-screen flex flex-col justify-center items-center">
+        <div className="flex flex-col gap-2 justify-center items-center w-[350px] h-[400px] bg-white/80 mx-auto rounded-[10px] py-14">
+          <GithubLoginButton />
+          <GoogleLoginButton />
+        </div>
       </div>
   );
 }

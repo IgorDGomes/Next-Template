@@ -12,7 +12,7 @@ import { ChangeEvent } from "react"
  * @param {LanguageSwitchProps} param0 
  * @returns {JSX.Element}
  */
-export function LanguageSwitch( { text, locale }: LanguageSwitchProps) {
+export function LanguageSwitch({ text, locale }: LanguageSwitchProps) {
     const router = useRouter()
 
     /**
@@ -21,7 +21,7 @@ export function LanguageSwitch( { text, locale }: LanguageSwitchProps) {
      */
     function handleChange(e: ChangeEvent<HTMLSelectElement>) {
         const selectedLang = e.target.value
-        router.push(`/${selectedLang}`)
+        router.push(`/${selectedLang}/main`)
     }
 
     return (
@@ -33,7 +33,7 @@ export function LanguageSwitch( { text, locale }: LanguageSwitchProps) {
                 onChange={handleChange}
                 defaultValue={""}
             >
-                <option value="" disabled>Select your language: </option>
+                <option value="" disabled>{text}</option>
                 <option value="en">English</option>
                 <option value="pt">Português</option>
                 <option value="es">Español</option>

@@ -1,7 +1,7 @@
 
-/**
+/*
  * Props for components receiving the locale parameter.
- */
+*/
 
 export interface Props {
   params: {
@@ -15,5 +15,5 @@ export interface Props {
 
 export interface LanguageSwitchProps {
   text: string,
-  locale: any
+  locale?: any
 }

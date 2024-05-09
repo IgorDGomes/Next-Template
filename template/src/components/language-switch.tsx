@@ -7,7 +7,7 @@ import { ChangeEvent } from "react"
 
 /**
  * Language Switch component.
- * Allows users to choose their desired language.
+ * Allows users to choose their language.
  * 
  * @param {LanguageSwitchProps} param0 
  * @returns {JSX.Element}

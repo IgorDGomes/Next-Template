@@ -20,7 +20,7 @@ import { Props } from "@/types/props";
 export default async function Home({ params: { locale } }: Props) {
   // Load translations for the current locale.
   const { t } = await initTranslations(locale, ['home', 'common'])
-  // Get user's session
+  // Get user session
   const session = await getServerSession()
 
   // Check if user has session, if not redirect to login page

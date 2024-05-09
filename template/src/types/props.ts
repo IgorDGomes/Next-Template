@@ -1,6 +1,6 @@
 
 /*
- * Props for components receiving the locale parameter.
+ * Interface for components receiving the locale parameter.
 */
 
 export interface Props {
@@ -10,7 +10,7 @@ export interface Props {
 }
 
 /*
- * Props for the LanguageSwitch component.
+ * Interface for the LanguageSwitch component.
 */
 
 export interface LanguageSwitchProps {

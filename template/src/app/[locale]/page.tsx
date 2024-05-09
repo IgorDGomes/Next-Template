@@ -14,8 +14,13 @@ import GoogleLoginButton from "@/components/google_login_button";
 export default async function Login() {
   const session = await getServerSession()
 
-  // If the user is already logged in, doens't allow going back to the login page.
-  if (session?.user?.email) {
+  // // If the user is already logged in, doens't allow going back to the login page.
+  // if (session?.user?.email) {
+  //   redirect("/main")
+  // }
+
+  // If there's an unique user:
+  if (session?.user?.email === process.env.USER_INFO) {
     redirect("/main")
   }
 

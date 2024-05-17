@@ -1,6 +1,6 @@
 # Next js Template
 
-In this template, translation to other languages and authentication are included.
+Translation to other languages and authentication are included.
 
 ## Template
 
@@ -31,7 +31,7 @@ Be aware that if any code is written in a client component it can be modified by
 
 It's important to create a .env file with your i18nexus api key:
 
-```
+```bash
     I18NEXUS_API_KEY=...
 ```
 
@@ -49,7 +49,7 @@ For more information there's a [video](https://www.youtube.com/watch?v=J8tnD2BWY
 
 Note: do not include the curly braces.
 
-```
+```bash
     GITHUB_ID={Your Github ID}
     GITHUB_SECRET={Your Github Secret}
 
@@ -57,7 +57,7 @@ Note: do not include the curly braces.
     GOOGLE_CLIENT_SECRET={Your Google Secret}
 
     NEXTAUTH_URL=http://localhost:3000
-    NEXTAUTH_SECRET= {On the terminal put: openssl rand -base64 32, copy the result and paste in here}
+    NEXTAUTH_SECRET=n2/axQt6jRBaJoAUMp3K60EprZq/E1wxgiUQ/rR5uH4=
 
     USER_INFO={Allowed email}
 ```
@@ -73,20 +73,22 @@ To start using this template do the following steps:
 
 1. Clone the repository to your machine.
 
-```
+```bash
     git clone https://github.com/IgorDGomes/Next-Template.git
 ```
 
 2. Open the project and go to the template directory.
 
-```
+```bash
     cd template/
 ```
 
 3. Create a <span style="color: cornflowerblue;">.env</span> file following the instruction above for either translation, authentication or both.
 
-4. Run the Application.
+4. Run the Application:
 
-```
+```bash
     npm run dev
 ```
+
+5. Open on the web [http://localhost:3000](http://localhost:3000)
